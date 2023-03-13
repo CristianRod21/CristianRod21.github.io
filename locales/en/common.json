@@ -1,0 +1,77 @@
+{
+    "landingSection": {
+        "greeting": "Hi, there. I'm",
+        "name": "Christian Rodríguez",
+        "description": "Software Engineer - Full Stack Developer - Machine Learning",
+        "link": {
+            "title": "Resume",
+            "ref": "/resume"
+        }
+    },
+    "aboutSection": {
+        "subtitle": "Get to know me",
+        "title": "About Me",
+        "description": "I'm a software engineer from Costa Rica who's passionate about creating innovative solutions. I'm currently leveraging my skills at EY to develop blockchain-powered applications that tackle complex business challenges. I'm also pursuing a Master's degree in Computer Science at the Universidad de Costa Rica with a focus on Machine Learning. I'm always eager to learn, create, and connect with people. In my free time, I enjoy playing sports, watching movies, and exploring new technologies.",
+        "tabs": {
+            "softwareEngenieer": {
+                "title": "Software Engineer"
+            },
+            "machineLearning": {
+                "title": "Machine Learning"
+            }
+        }
+    },
+    "projectsSection": {
+        "subtitle": "Somethings I'm proud of",
+        "title": "Projects",
+        "description": "I'm working on improving the documentation of my journey as a software engineer. Stay tuned for working demos (or at least a video recording :) )",
+        "projects": [
+            {
+                "title": "EY Blockchain",
+                "description": "EY Blockchain is a platform that allows users to create and manage their own blockchain networks. It also provides a set of tools to interact with the blockchain network and deploy smart contracts."
+            }
+        ]
+    },
+    "contactSection": {
+        "title": "Get in touch",
+        "description": "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.",
+        "contact": {
+            "title": "Contact me",
+            "ref": "mailto:cjrs21.cr@gmail.com"
+        }
+    },
+    "footer": {
+        "title": "Made with ❤️ by Christian Rodríguez",
+        "links": [
+            {
+                "title": "GitHub"
+            },
+            {
+                "title": "LinkedIn"
+            },
+            {
+                "title": "Twitter"
+            }
+        ]
+    },
+    "navbar": {
+        "links": [
+            {
+                "title": "Home",
+                "ref": "#home"
+            },
+            {
+                "title": "About",
+                "ref": "#about"
+            },
+            {
+                "title": "Projects",
+                "ref": "#projects"
+            },
+            {
+                "title": "Contact",
+                "ref": "#contact"
+            }
+        ]
+    }
+}
