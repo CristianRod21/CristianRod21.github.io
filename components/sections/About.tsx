@@ -45,7 +45,7 @@ function TabContent({ localePrefix }: { localePrefix: string }) {
                 <Box>
                     {technologies.map(item => {
                         return (
-                            <AvatarChips label={item.label} src={item.src} alt={item.alt} />
+                            <AvatarChips key={`tab-{${item.label}}`} label={item.label} src={item.src} alt={item.alt} />
                         )
                     })}
                 </Box>

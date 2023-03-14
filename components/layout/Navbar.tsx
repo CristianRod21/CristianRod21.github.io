@@ -60,8 +60,10 @@ export default function DrawerAppBar() {
             CrisDev
           </IconButton>
           <Typography
-            variant="h6"
+            variant="h5"
             component="div"
+            fontWeight={'bold'}
+            color="#222831"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
             CrisDev
