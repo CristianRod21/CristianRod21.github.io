@@ -1,5 +1,7 @@
-import { Box, Container, Grid, Typography, Paper, Avatar, Divider } from '@mui/material'
-import useTranslation from 'next-translate/useTranslation';
+import { Box, Container, Grid, Typography, Paper, Avatar } from '@mui/material'
+import {
+  useTranslation,
+} from "next-export-i18n";
 import theme from '../../theming/theme';
 
 export default function Projects() {
@@ -27,7 +29,6 @@ export default function Projects() {
             <Grid item xs={12} md={4} key={project.id}>
               <Paper elevation={3} sx={{ p: 0.5, background: theme.palette.secondary.main, height: '100%' }}>
                 <Box sx={{ p: 2, background: 'white', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-around' }}>
-                  {/* <img src={project.image} alt={project.title} /> */}
                   <Typography color="primary" variant="h6" gutterBottom>
                     {project.title}
                   </Typography>

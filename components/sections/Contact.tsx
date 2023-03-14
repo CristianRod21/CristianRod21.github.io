@@ -1,5 +1,10 @@
-import { Box, Button, Container, Link, Typography } from '@mui/material'
-import useTranslation from 'next-translate/useTranslation';
+import { Box, Button, Container, Typography } from '@mui/material'
+import Link from '../../src/Link';
+
+import {
+    useTranslation,
+} from "next-export-i18n";
+
 export default function Contact() {
     const { t } = useTranslation('common');
 

@@ -2,8 +2,9 @@ import { Box, Container, Grid, Tab, Tabs, Typography, Paper, Chip, Avatar, Stack
 import useMediaQuery from '@mui/material/useMediaQuery'
 import { useState } from 'react'
 import theme from '../../theming/theme'
-import useTranslation from 'next-translate/useTranslation'
-import Trans from 'next-translate/Trans'
+import {
+    useTranslation,
+} from "next-export-i18n";
 
 function AvatarChips({ label, src, alt }: { label: string, src: string, alt: string }) {
     return (
@@ -78,13 +79,16 @@ export default function About() {
                     <Typography variant='h4' color='primary' fontWeight={'bold'} gutterBottom>
                         {t('aboutSection.title')}
                     </Typography>
-                    <Trans
+                    <Typography variant='body1' fontWeight={'regular'} gutterBottom>
+                        {t('aboutSection.description')}
+                    </Typography>
+                    {/* <Trans
                         i18nKey="common:aboutSection.description"
                         components={{
                             bold: <Typography variant='body1' fontWeight={'bold'} display="inline" color='primary' />,
                             boldY: <Typography variant='body1' fontWeight={'bold'} display="inline" color='secondary' />,
                         }}
-                    />
+                    /> */}
 
                 </Grid>
                 <Grid item sm={12} md={5}>

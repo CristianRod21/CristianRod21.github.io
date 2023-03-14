@@ -1,0 +1,191 @@
+{
+    "landingSection": {
+        "greeting": "Hi, there. I'm",
+        "name": "Christian Rodríguez",
+        "description": "Software Engineer - Full Stack Developer - Machine Learning",
+        "link": {
+            "title": "Resume",
+            "ref": "/resume"
+        }
+    },
+    "aboutSection": {
+        "subtitle": "Get to know me",
+        "title": "About Me",
+        "description": "I'm a software engineer from Costa Rica who's passionate about creating innovative solutions. I'm currently leveraging my skills at EY to develop blockchain-powered applications that tackle complex business challenges. I'm also pursuing a Master's degree in Computer Science at the Universidad de Costa Rica with a focus on Machine Learning. I'm always eager to learn, create, and connect with people. In my free time, I enjoy playing sports, watching movies, and exploring new technologies.",
+        "tabs": {
+            "content": {
+                "title": "Experience",
+                "technologyStack": "Technology Stack"
+            },
+            "softwareEngenieer": {
+                "title": "Software Engineer",
+                "subtitle": "Software Engenieer @ EY (2021 - Present)",
+                "description1": "I'm currently working on blockchain-based applications as a Software Engenieer at EY",
+                "description2": " I've been involved on the entire development cycle of a blockchain powered application, from the design of the architecture to the development of the application both in the backend and frontend.",
+                "technologies": [
+                    {
+                        "label": "JavaScript",
+                        "src": "/icons/js.png",
+                        "alt": "JavaScript logo"
+                    },
+                    {
+                        "label": "React",
+                        "src": "/icons/react.png",
+                        "alt": "React logo"
+                    },
+                    {
+                        "label": "Mongo",
+                        "src": "/icons/mongo.svg",
+                        "alt": "MongoDB logo"
+                    },
+                    {
+                        "label": "Mui",
+                        "src": "/icons/mui.png",
+                        "alt": "Material UI logo"
+                    },
+                    {
+                        "label": "NodeJs",
+                        "src": "/icons/node.png",
+                        "alt": "NodeJS logo"
+                    },
+                    {
+                        "label": "Github",
+                        "src": "/icons/github.png",
+                        "alt": "Github logo"
+                    },
+                    {
+                        "label": "Docker",
+                        "src": "/icons/docker.png",
+                        "alt": "Docker logo"
+                    },
+                    {
+                        "label": "GCP",
+                        "src": "/icons/gcp.png",
+                        "alt": "Google Cloud Platform logo"
+                    },
+                    {
+                        "label": "Blockchain",
+                        "src": "/icons/blockchain.png",
+                        "alt": "Blockchain logo"
+                    }
+        
+                ]
+            },
+            "machineLearning": {
+                "title": "Machine Learning",
+                "subtitle": "Personal Projects  (2020 - Present)",
+                "description1": "Ever since my third year of college, I've been captivated by the limitless potencial of machine learning. I am constantly exploring new ideas, reading research papers, watching tutorials and experimenting with different algorithms to expand my knowledge and improve my skills.",
+                "description2": "My passion for machine learning has driven me to create several exiting projects in the areas of computer vision, and natural language processing. I am eager to take on new challenges and apply my knowledge to solve real world problems.",
+                "technologies": [
+                    {
+                        "label": "Python",
+                        "src": "/icons/python.png",
+                        "alt": "Python logo"
+                    },
+                    {
+                        "label": "Pytorch",
+                        "src": "/icons/pytorch.png",
+                        "alt": "Pytorch logo"
+                    },
+                    {
+                        "label": "OpenCV",
+                        "src": "/icons/opencv.png",
+                        "alt": "OpenCV logo"
+                    },
+                    {
+                        "label": "Weight and Biases",
+                        "src": "/icons/wb.jpeg",
+                        "alt": "Weight and Biases logo"
+                    },
+                    {
+                        "label": "Hugging Face",
+                        "src": "/icons/hf-logo.png",
+                        "alt": "Hugging Face logo"
+                    },
+                    {
+                        "label": "Pandas",
+                        "src": "/icons/pandas.png",
+                        "alt": "Pandas logo"
+                    },
+                    {
+                        "label":"Matplotlib",
+                        "src": "/icons/matplotlib.png",
+                        "alt": "Matplotlib logo"
+                    }
+                ]
+            }
+        }
+    },
+    "projectsSection": {
+        "subtitle": "Somethings I'm proud of",
+        "title": "Projects",
+        "description": "I'm currently working on improve my documentation efforts. I will be sharing detailed documentation of my projects and experiences to provide insight into my work. Stay tuned for working demos and, if possible, video recordings to get a better understanding of my projects.",
+        "projects": [
+            {
+                "title": "Seizure Classification",
+                "description": "American Epilepsy Society Seizure Prediction Challenge, which consists in predicting seizures in intracranial EEG recordings. Particularly, we compared how a Visual Transformer (ViT) performed to other Machine Learning methods like Convolutional Neural Networks, Support Vector Machines, and Random Forest"
+            },
+            {
+                "title": "Vehicle Counting",
+                "description": "Built a system for real-time vehicle counting on video footage. We used YOLOv4 as our object detector and plugged in different trackers from the OpenCV Multitracker library and DeepSort. We compared how these trackers performed in different challenging road scenarios.",
+                "githubLink": "https://github.com/CristianRod21/yolov4-tracking"
+            },
+            {
+                "title": "Speech Recognition Evaluation",
+                "description": "Recollected and labeled (Label Studio) audio from the Costa Rica Legislative Assembly Youtube channel. Evaluated how different open source Transformer models performed on the dataset after being finetuned in Spanish from Costa Rica"
+            },
+            {
+                "title": "Robot Assistant",
+                "description": "Developed a perception and control system which can find and deliver certain objects in a room. This was done using QiBullet simulation and based on YOLO v4.",
+                "githubLink": "https://github.com/CristianRod21/YOLO_vs_RCNN_qiBullet"
+            },
+            {
+                "title": "Personal website",
+                "description": "You are looking at it right now.",
+                "githubLink": "https://github.com/CristianRod21/CristianRod21.github.io"
+            }
+        ]
+    },
+    "contactSection": {
+        "title": "Get in touch",
+        "description": "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.",
+        "contact": {
+            "title": "Contact me",
+            "ref": "mailto:cjrs21.cr@gmail.com"
+        }
+    },
+    "footer": {
+        "title": "Made with ❤️ by Christian Rodríguez",
+        "links": [
+            {
+                "title": "GitHub"
+            },
+            {
+                "title": "LinkedIn"
+            },
+            {
+                "title": "Twitter"
+            }
+        ]
+    },
+    "navbar": {
+        "links": [
+            {
+                "title": "Home",
+                "ref": "#landing"
+            },
+            {
+                "title": "About",
+                "ref": "#about"
+            },
+            {
+                "title": "Projects",
+                "ref": "#projects"
+            },
+            {
+                "title": "Contact",
+                "ref": "#contact"
+            }
+        ]
+    }
+}

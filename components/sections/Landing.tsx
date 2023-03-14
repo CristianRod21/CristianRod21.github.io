@@ -1,8 +1,8 @@
 import { Box, Button, Container, Link, Typography } from '@mui/material'
 import theme from '../../theming/theme';
-import useTranslation from 'next-translate/useTranslation';
-import LandingImage from '../../public/landing_image.svg';
-import Image from 'next/image';
+import {
+    useTranslation,
+} from "next-export-i18n";
 
 export default function Landing() {
     const { t } = useTranslation('common');
@@ -39,15 +39,6 @@ export default function Landing() {
                             </Button>
                         </Box>
                     </Box>
-
-                    {/* <Box display="flex" flexDirection={'row'}>
-                        <Image
-                         src ={LandingImage}
-                         alt="Landing Image"
-                         width={300}
-                            height={300}
-                        />
-                    </Box> */}
                 </Box>
             </Box>
 

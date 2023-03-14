@@ -5,16 +5,16 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
-// import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import Stack from '@mui/material/Stack';
-import useTranslation from 'next-translate/useTranslation';
-import { Link } from '@mui/material';
-// import AdbIcon from '@mui/icons-material/Adb';
+import {
+  useTranslation,
+} from "next-export-i18n";
+import Link from '../../src/Link';
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
@@ -28,27 +28,9 @@ function Navbar() {
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElUser(event.currentTarget);
-  };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
-
-  const handleClick = (event: any) => {
-    event.preventDefault();
-    const anchor = (event.target.ownerDocument || document).querySelector(
-      event.target.getAttribute('href'),
-    );
-
-    if (anchor) {
-      anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
   };
 
   return (
@@ -105,7 +87,7 @@ function Navbar() {
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: 'white', display: 'block' }}
                 >
-                  <Link href={page.ref} underline="none" onClick={handleClick}>{page.title}</Link>
+                  <Link href={page.ref} underline="none">{page.title}</Link>
                 </Button>
               ))}
             </Menu>
@@ -132,17 +114,16 @@ function Navbar() {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                <Link href={page.ref} underline="none" onClick={handleClick}>{page.title}</Link>
+                <Link href={page.ref} underline="none">{page.title}</Link>
               </Button>
             ))}
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
             <Stack direction="row" spacing={2}>
-              <Avatar alt={`Github link`} src="/icons/github.png" component="a" href={'https://github.com/CristianRod21'} target="_blank" sx={{ height: '2rem', width: '2rem' }} />
-              <Avatar alt={`Linkedin link`} src="/icons/linkedin.png" component="a" href={'https://www.linkedin.com/in/christianrodriguezsoto/'} target="_blank" sx={{ height: '2rem', width: '2rem' }} />
+              <Avatar alt={`Github link`} src="/icons/github.png" component={Link} href={'https://github.com/CristianRod21'} target="_blank" sx={{ height: '2rem', width: '2rem' }} />
+              <Avatar alt={`Linkedin link`} src="/icons/linkedin.png" component={Link} href={'https://www.linkedin.com/in/christianrodriguezsoto/'} target="_blank" sx={{ height: '2rem', width: '2rem' }} />
             </Stack>
-
           </Box>
         </Toolbar>
       </Container>
