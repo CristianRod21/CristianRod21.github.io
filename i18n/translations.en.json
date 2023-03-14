@@ -5,7 +5,7 @@
         "description": "Software Engineer - Full Stack Developer - Machine Learning",
         "link": {
             "title": "Resume",
-            "ref": "/resume"
+            "ref": "/cv.pdf"
         }
     },
     "aboutSection": {
@@ -155,7 +155,7 @@
         }
     },
     "footer": {
-        "title": "Made with ❤️ by Christian Rodríguez",
+        "title": "Made by Christian Rodríguez",
         "links": [
             {
                 "title": "GitHub"

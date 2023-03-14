@@ -46,7 +46,7 @@ function Navbar() {
               mr: 2,
               display: { xs: 'none', md: 'flex' },
 
-              color: 'primary.main',
+              color: 'white',
               textDecoration: 'none',
             }}
           >
@@ -87,7 +87,11 @@ function Navbar() {
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: 'white', display: 'block' }}
                 >
-                  <Link href={page.ref} underline="none">{page.title}</Link>
+                  <Link href={page.ref} underline="none"><Typography sx={{
+                    color: 'white',
+                    textDecoration: 'none',
+
+                  }}>{page.title}</Typography></Link>
                 </Button>
               ))}
             </Menu>
@@ -114,7 +118,11 @@ function Navbar() {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                <Link href={page.ref} underline="none">{page.title}</Link>
+                <Link href={page.ref} underline="none"><Typography sx={{
+                  color: 'white',
+                  textDecoration: 'none',
+
+                }}>{page.title}</Typography></Link>
               </Button>
             ))}
           </Box>
