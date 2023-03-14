@@ -8,10 +8,9 @@ export default function Landing() {
     const { t } = useTranslation('common');
 
     return (
-        <Container maxWidth="lg">
+        <Container maxWidth="lg" id="landing">
             <Box
                 sx={{
-                    my: 4,
                     display: 'flex',
                     backgroundColor: 'primary',
                     flexDirection: 'column',

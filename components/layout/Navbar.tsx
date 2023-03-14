@@ -1,99 +1,152 @@
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
-import Divider from '@mui/material/Divider';
-import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
-// import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
+import Menu from '@mui/material/Menu';
+// import MenuIcon from '@mui/icons-material/Menu';
+import Container from '@mui/material/Container';
+import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
+import Tooltip from '@mui/material/Tooltip';
+import MenuItem from '@mui/material/MenuItem';
+import Stack from '@mui/material/Stack';
 import useTranslation from 'next-translate/useTranslation';
+import { Link } from '@mui/material';
+// import AdbIcon from '@mui/icons-material/Adb';
 
-const drawerWidth = 240;
+function Navbar() {
+  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
+  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
 
-export default function DrawerAppBar() {
-  const [mobileOpen, setMobileOpen] = React.useState(false);
-  
+
   const { t } = useTranslation('common');
 
-  const navItems = t('navbar.links', {}, { returnObjects: true }) as Array<any>;
+  const pages = t(`navbar.links`, {}, { returnObjects: true }) as Array<any>;
 
-  const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState);
+  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorElNav(event.currentTarget);
+  };
+  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorElUser(event.currentTarget);
   };
 
-  const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
-      </Typography>
-      <Divider />
-      <List>
-        {/* {navItems.map((item: any) => (
-          <ListItem key={item.title} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item.title} />
-            </ListItemButton>
-          </ListItem>
-        ))} */}
-      </List>
-    </Box>
-  );
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
+
+  const handleClick = (event: any) => {
+    event.preventDefault();
+    const anchor = (event.target.ownerDocument || document).querySelector(
+      event.target.getAttribute('href'),
+    );
+
+    if (anchor) {
+      anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   return (
-    <Box sx={{ display: 'flex' }}>
-      <AppBar component="nav">
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
+    <AppBar position="static" sx={{ background: '#222831F0' }}>
+      <Container maxWidth="xl">
+        <Toolbar disableGutters>
+          <Typography
+            variant="h6"
+            noWrap
+            component="a"
+            href="/"
+            sx={{
+              mr: 2,
+              display: { xs: 'none', md: 'flex' },
+
+              color: 'primary.main',
+              textDecoration: 'none',
+            }}
           >
-            CrisDev
-          </IconButton>
+            ChristianDev
+          </Typography>
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="inherit"
+            >
+              <Typography textAlign="center">Menu</Typography>
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{
+                display: { xs: 'block', md: 'none' },
+              }}
+            >
+              {pages.map((page) => (
+                <Button
+                  key={page.title}
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: 'white', display: 'block' }}
+                >
+                  <Link href={page.ref} underline="none" onClick={handleClick}>{page.title}</Link>
+                </Button>
+              ))}
+            </Menu>
+          </Box>
           <Typography
             variant="h5"
-            component="div"
-            fontWeight={'bold'}
-            color="#222831"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+            noWrap
+            component="a"
+            href=""
+            sx={{
+              mr: 2,
+              display: { xs: 'flex', md: 'none' },
+              flexGrow: 1,
+              color: 'primary.main',
+              textDecoration: 'none',
+            }}
           >
-            CrisDev
+            ChristianDev
           </Typography>
-          {/* <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {navItems.map((item) => (
-              <Button key={item.title} sx={{ color: '#fff' }}>
-                {item.title}
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            {pages.map((page) => (
+              <Button
+                key={page.title}
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                <Link href={page.ref} underline="none" onClick={handleClick}>{page.title}</Link>
               </Button>
             ))}
-          </Box> */}
-        </Toolbar>
-      </AppBar>
-      <Box component="nav">
-        <Drawer
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
-          sx={{
-            display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-          }}
-        >
-          {drawer}
-        </Drawer>
-      </Box>
+          </Box>
 
-    </Box>
+          <Box sx={{ flexGrow: 0 }}>
+            <Stack direction="row" spacing={2}>
+              <Avatar alt={`Github link`} src="/icons/github.png" component="a" href={'https://github.com/CristianRod21'} target="_blank" sx={{ height: '2rem', width: '2rem' }} />
+              <Avatar alt={`Linkedin link`} src="/icons/linkedin.png" component="a" href={'https://www.linkedin.com/in/christianrodriguezsoto/'} target="_blank" sx={{ height: '2rem', width: '2rem' }} />
+            </Stack>
+
+          </Box>
+        </Toolbar>
+      </Container>
+    </AppBar>
   );
 }
+export default Navbar;

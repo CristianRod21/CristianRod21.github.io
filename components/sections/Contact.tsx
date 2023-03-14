@@ -4,7 +4,7 @@ export default function Contact() {
     const { t } = useTranslation('common');
 
     return (
-        <Container maxWidth="lg">
+        <Box display='flex' flexDirection={'column'} alignItems='center' minHeight={'100vh'} justifyContent='center'  sx={{background: '#393e4616', p:0}} id='contact'>
             <Box
                 sx={{
                     my: 4,
@@ -28,6 +28,6 @@ export default function Contact() {
                     </Link>
                 </Button>
             </Box>
-        </Container>
+        </Box>
     )
 }

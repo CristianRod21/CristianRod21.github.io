@@ -23,10 +23,10 @@ function TabContent({ localePrefix }: { localePrefix: string }) {
     const technologies = t(`aboutSection.tabs.${localePrefix}.technologies`, {}, { returnObjects: true }) as Array<any>;
 
     return (
-        <Box sx={{ borderRadius: '0.875rem', display: 'flex', justifyContent: 'center', alignItems: 'center', p:0.5, background: theme.palette.secondary.main,
+        <Paper sx={{ borderRadius: '0.875rem', display: 'flex', justifyContent: 'center', alignItems: 'center', p:0.5, background: theme.palette.secondary.main,
             boxShadow: '-6px 4px 7px -1px rgba(57,62,70,0.75)',
         }}>
-            <Box sx={{ borderRadius: '0.875rem', background: 'white',  padding: 2 }}>
+            <Paper sx={{ borderRadius: '0.875rem', background: 'white',  padding: 2 }}>
                 <Typography variant='h4' fontWeight={'bold'} color="primary" gutterBottom>
                     {t('aboutSection.tabs.content.title')}
                 </Typography>
@@ -49,8 +49,8 @@ function TabContent({ localePrefix }: { localePrefix: string }) {
                         )
                     })}
                 </Box>
-            </Box>
-        </Box>
+            </Paper>
+        </Paper>
     )
 }
 
@@ -69,8 +69,8 @@ export default function About() {
     };
 
     return (
-        <Box display='flex' flexDirection={'column'} alignItems='center' minHeight={'100vh'} justifyContent='center'  sx={{background: '#393e4616', p:0}} >
-            <Grid container rowSpacing={0} columnSpacing={2} minHeight={'90vh'} maxWidth={'lg'} padding={2}>
+        <Box display='flex' flexDirection={'column'} alignItems='center' minHeight={'100vh'} justifyContent='center'  sx={{background: '#393e4616', p:0}} id="about" >
+            <Grid container rowSpacing={0} columnSpacing={2}  maxWidth={'lg'} padding={2}>
                 <Grid item xs={12}>
                     <Typography variant='body1' fontWeight={'bold'} gutterBottom>
                         {t('aboutSection.subtitle')}
