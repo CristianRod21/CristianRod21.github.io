@@ -16,13 +16,13 @@ export default function Contact() {
                     minHeight: '80vh',
                 }}
             >
-                <Typography variant='h2' color='primary' fontWeight={'bold'}>
+                <Typography variant='h2' color='primary' fontWeight={'bold'} gutterBottom>
                     {t('contactSection.title')}
                 </Typography>
-                <Typography variant='body1' fontWeight={'light'} gutterBottom>
+                <Typography variant='body1' fontWeight={'regular'} gutterBottom>
                     {t('contactSection.description')}
                 </Typography>
-                <Button variant='contained' size="large" sx={{ borderRadius: '0.875rem' }}>
+                <Button variant='contained' size="large" sx={{ borderRadius: '0.875rem', mt: 4 }}>
                     <Link href={t('contactSection.contact.ref')} color='inherit' underline={'none'}>
                         {t('contactSection.contact.title')}
                     </Link>

@@ -11,7 +11,7 @@ export default function Home() {
     <Box>
       <Landing />
       <About />
-      <Projects />
+      {/* <Projects /> */}
       <Contact />
     </Box>
   );

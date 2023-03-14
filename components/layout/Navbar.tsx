@@ -35,13 +35,13 @@ export default function DrawerAppBar() {
       </Typography>
       <Divider />
       <List>
-        {navItems.map((item: any) => (
+        {/* {navItems.map((item: any) => (
           <ListItem key={item.title} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
               <ListItemText primary={item.title} />
             </ListItemButton>
           </ListItem>
-        ))}
+        ))} */}
       </List>
     </Box>
   );
@@ -66,13 +66,13 @@ export default function DrawerAppBar() {
           >
             CrisDev
           </Typography>
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+          {/* <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
               <Button key={item.title} sx={{ color: '#fff' }}>
                 {item.title}
               </Button>
             ))}
-          </Box>
+          </Box> */}
         </Toolbar>
       </AppBar>
       <Box component="nav">

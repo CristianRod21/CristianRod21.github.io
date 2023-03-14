@@ -10,13 +10,13 @@ export default function Projects() {
         <Container maxWidth="lg">
         <Grid container columnSpacing={5} minHeight='80vh'>
             <Grid item xs={12}>
-              <Typography variant='body1' fontWeight={'bold'}>
+              <Typography variant='body1' fontWeight={'bold'} gutterBottom>
                 {t('projectsSection.subtitle')}
               </Typography>
-              <Typography variant='h4' color='primary' fontWeight={'bold'}>
+              <Typography variant='h4' color='primary' fontWeight={'bold'} gutterBottom>
               {t('projectsSection.title')}
               </Typography>
-              <Typography variant='body1' fontWeight={'light'} gutterBottom>
+              <Typography variant='body1' fontWeight={'normal'}>
               {t('projectsSection.description')}
               </Typography>
             </Grid>
