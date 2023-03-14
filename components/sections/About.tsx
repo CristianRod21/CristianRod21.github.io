@@ -93,7 +93,7 @@ export default function About() {
                 </Grid>
                 <Grid item sm={12} md={5}>
                     <Tabs value={value} onChange={handleChange} aria-label="stacks" orientation={isMdUp ? 'vertical' : 'horizontal'}>
-                        <Tab label={t('aboutSection.tabs.softwareEngenieer.title')}/>
+                        <Tab label={t('aboutSection.tabs.softwareEngineer.title')}/>
                         <Tab label={t('aboutSection.tabs.machineLearning.title')} />
                     </Tabs>
                 </Grid>
@@ -102,7 +102,7 @@ export default function About() {
                 <Grid item xs={12} sm={12} md={6} sx={{ minHeight: '60vh' }}>
                     {
                         value === 0 && (
-                            <TabContent localePrefix='softwareEngenieer' />)
+                            <TabContent localePrefix='softwareEngineer' />)
                     }
                     {
                         value === 1 && (

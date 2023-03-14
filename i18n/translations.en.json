@@ -17,10 +17,10 @@
                 "title": "Experience",
                 "technologyStack": "Technology Stack"
             },
-            "softwareEngenieer": {
+            "softwareEngineer": {
                 "title": "Software Engineer",
-                "subtitle": "Software Engenieer @ EY (2021 - Present)",
-                "description1": "I'm currently working on blockchain-based applications as a Software Engenieer at EY",
+                "subtitle": "Software Engineer @ EY (2021 - Present)",
+                "description1": "I am working on blockchain-based applications as a Software Engineer at EY",
                 "description2": " I've been involved on the entire development cycle of a blockchain powered application, from the design of the architecture to the development of the application both in the backend and frontend.",
                 "technologies": [
                     {
@@ -117,9 +117,9 @@
         }
     },
     "projectsSection": {
-        "subtitle": "Somethings I'm proud of",
+        "subtitle": "Something I'm proud of",
         "title": "Projects",
-        "description": "I'm currently working on improve my documentation efforts. I will be sharing detailed documentation of my projects and experiences to provide insight into my work. Stay tuned for working demos and, if possible, video recordings to get a better understanding of my projects.",
+        "description": "I'm improving my documentation efforts. I will be sharing detailed documentation of my projects and experiences to provide insight into my work. Stay tuned for working demos and, if possible, video recordings to get a better understanding of my projects.",
         "projects": [
             {
                 "title": "Seizure Classification",
