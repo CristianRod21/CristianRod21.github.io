@@ -62,7 +62,7 @@ export default function Landing() {
                                 sx={{ 
                                     pt: theme.spacing(1), 
                                     pb: theme.spacing(1),
-                                    '&:hover': { color: 'primary.alt' }  // Color change on hover
+                                    '&:hover': { color: 'primary.light' }  // Color change on hover
                                 }} 
                                 variant='h2' 
                                 color='primary' 
@@ -76,7 +76,7 @@ export default function Landing() {
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.5 }}
                         >
-                            <Typography variant='body1' fontWeight={'bold'} gutterBottom color={theme.palette.primary.alt}>
+                            <Typography variant='body1' fontWeight={'bold'} gutterBottom color={theme.palette.primary.light}>
                                 {description.split('').map((char, index) => (
                                     <motion.span
                                         key={index}

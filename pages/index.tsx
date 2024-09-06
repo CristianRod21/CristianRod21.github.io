@@ -8,7 +8,7 @@ import theme from '../theming/theme';
 
 export default function Home() {
   return (
-    <Box sx={{ backgroundColor: theme.palette.background.secondary}}>
+    <Box sx={{ backgroundColor: theme.palette.background.light}}>
       <Landing />
       <About />
       <Projects />
