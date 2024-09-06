@@ -14,6 +14,7 @@ const theme = createTheme({
    palette: {
      primary: {
        main: '#00adb5',
+       alt: '#BF2EF0'
      },
      secondary: {
        main: '#393e46',
@@ -22,7 +23,7 @@ const theme = createTheme({
        main: red.A400,
      },
      background: {
-        default: '#EEEEE',
+        default: '#EEEEEE',
      },
    },
   typography: {

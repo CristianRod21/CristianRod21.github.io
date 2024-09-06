@@ -6,6 +6,8 @@ import {
 import Image from 'next/image';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
+
 
 
 export default function Landing() {
@@ -26,13 +28,26 @@ export default function Landing() {
         return () => clearInterval(interval);
     }, [images.length]);
 
+    const [typedText, setTypedText] = useState('');
+
+    useEffect(() => {
+        const text = t('landingSection.greeting');
+        let index = 0;
+        const interval = setInterval(() => {
+            setTypedText(text.substring(0, index));
+            index++;
+            if (index > text.length) clearInterval(interval);
+        }, 100);
+
+        // Add this line to clean up the interval
+        return () => clearInterval(interval);
+    }, [t]); // Add t to the dependency array
 
     return (
         <Container maxWidth="lg" id="landing">
             <Box
                 sx={{
                     display: 'flex',
-                    backgroundColor: 'primary',
                     flexDirection: 'column',
                     justifyContent: 'center',
                     alignContent: 'center',
@@ -42,12 +57,32 @@ export default function Landing() {
             >
                 <Box sx={{ display: 'flex', flexDirection: isSM ? 'column' : 'row', gap: isSM ? 2 : 30 }}>
                     <Box>
-                        <Typography variant='h4' color='secondary' fontWeight={'bold'}>
-                            {t('landingSection.greeting')}
-                        </Typography>
-                        <Typography sx={{ pt: theme.spacing(1), pb: theme.spacing(1) }} variant='h2' color='primary' fontWeight={'bold'}>
-                            {t('landingSection.name')}
-                        </Typography>
+                        <motion.div
+                            initial={{ opacity: 0, y: -20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1 }}
+                        >
+                            <Typography variant='h4' color='secondary' fontWeight={'bold'}>
+                                {t('landingSection.greeting')}
+                            </Typography>
+                        </motion.div>
+                        <motion.div
+                            whileHover={{ scale: 1.05 }}
+                            transition={{ type: "spring", stiffness: 300 }}
+                        >
+                            <Typography 
+                                sx={{ 
+                                    pt: theme.spacing(1), 
+                                    pb: theme.spacing(1),
+                                    '&:hover': { color: 'primary.alt' }  // Color change on hover
+                                }} 
+                                variant='h2' 
+                                color='primary' 
+                                fontWeight={'bold'}
+                            >
+                                {t('landingSection.name')}
+                            </Typography>
+                        </motion.div>
                         <Typography variant='body1' fontWeight={'bold'} color="secondary" gutterBottom>
                             {t('landingSection.description')}
                         </Typography>
@@ -59,27 +94,32 @@ export default function Landing() {
                             </Button>
                         </Box>
                     </Box>
-                    <Box sx={{ display: 'flex' }}>
-                        <Box>
-                            {images.map((image, index) => (
-                                <Image
-                                    key={index}
-                                    src={image}
-                                    alt={`Image ${index}`}
-                                    width={imageSize}
-                                    height={imageSize}
-                                    quality={100}
-                                    style={{
-                                        position: 'absolute',
-                                        opacity: currentIndex === index ? 1 : 0,
-                                        transition: 'opacity 0.5s ease-in-out',
-                                        borderRadius: '20px',
-                                        objectFit: 'cover',
-                                    }}
-                                />
-                            ))}
+                    <motion.div
+                        whileHover={{ rotate: 5 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                    >
+                        <Box sx={{ display: 'flex' }}>
+                            <Box>
+                                {images.map((image, index) => (
+                                    <Image
+                                        key={index}
+                                        src={image}
+                                        alt={`Image ${index}`}
+                                        width={imageSize}
+                                        height={imageSize}
+                                        quality={100}
+                                        style={{
+                                            position: 'absolute',
+                                            opacity: currentIndex === index ? 1 : 0,
+                                            transition: 'opacity 0.5s ease-in-out',
+                                            borderRadius: '20px',
+                                            objectFit: 'cover',
+                                        }}
+                                    />
+                                ))}
+                            </Box>
                         </Box>
-                    </Box>
+                    </motion.div>
                 </Box>
             </Box>
         </Container>

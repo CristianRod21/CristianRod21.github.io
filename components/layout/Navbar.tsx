@@ -34,7 +34,7 @@ function Navbar() {
   };
 
   return (
-    <AppBar position="static" sx={{ background: '#222831F0' }}>
+    <AppBar position="fixed" sx={{ background: 'rgba(255, 255, 255, 0.8)', backdropFilter: 'blur(10px)' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -45,13 +45,15 @@ function Navbar() {
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
-
-              color: 'white',
+              fontWeight: 700,
+              letterSpacing: '.1rem',
+              color: 'primary.main',
               textDecoration: 'none',
             }}
           >
             ChristianDev
           </Typography>
+
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -82,17 +84,16 @@ function Navbar() {
               }}
             >
               {pages.map((page) => (
-                <Button
-                  key={page.title}
-                  onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: 'white', display: 'block' }}
-                >
-                  <Link href={page.ref} underline="none"><Typography sx={{
-                    color: 'white',
-                    textDecoration: 'none',
-
-                  }}>{page.title}</Typography></Link>
-                </Button>
+                <MenuItem key={page.title} onClick={handleCloseNavMenu}>
+                  <Link href={page.ref} underline="none">
+                    <Typography sx={{
+                      color: 'text.primary', // Change this to use the primary text color
+                      textDecoration: 'none',
+                    }}>
+                      {page.title}
+                    </Typography>
+                  </Link>
+                </MenuItem>
               ))}
             </Menu>
           </Box>
@@ -111,26 +112,51 @@ function Navbar() {
           >
             ChristianDev
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center' }}>
             {pages.map((page) => (
               <Button
                 key={page.title}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ 
+                  my: 2, 
+                  color: 'primary.main', 
+                  display: 'block',
+                  mx: 1,
+                  '&:hover': {
+                    backgroundColor: 'rgba(0, 0, 0, 0.04)',
+                  },
+                }}
               >
-                <Link href={page.ref} underline="none"><Typography sx={{
-                  color: 'white',
-                  textDecoration: 'none',
-
-                }}>{page.title}</Typography></Link>
+                <Link href={page.ref} underline="none">
+                  <Typography sx={{
+                    fontWeight: 500,
+                    textTransform: 'capitalize',
+                  }}>
+                    {page.title}
+                  </Typography>
+                </Link>
               </Button>
             ))}
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
             <Stack direction="row" spacing={2}>
-              <Avatar alt={`Github link`} src="/icons/github.png" component={Link} href={'https://github.com/CristianRod21'} target="_blank" sx={{ height: '2rem', width: '2rem' }} />
-              <Avatar alt={`Linkedin link`} src="/icons/linkedin.png" component={Link} href={'https://www.linkedin.com/in/christianrodriguezsoto/'} target="_blank" sx={{ height: '2rem', width: '2rem' }} />
+              {['github', 'linkedin'].map((platform) => (
+                <IconButton
+                  key={platform}
+                  component={Link}
+                  href={platform === 'github' ? 'https://github.com/CristianRod21' : 'https://www.linkedin.com/in/christianrodriguezsoto/'}
+                  target="_blank"
+                  sx={{ 
+                    color: 'text.primary',
+                    '&:hover': {
+                      color: 'primary.main',
+                    },
+                  }}
+                >
+                  <img src={`/icons/${platform}.png`} alt={`${platform} link`} style={{ width: '1.5rem', height: '1.5rem' }} />
+                </IconButton>
+              ))}
             </Stack>
           </Box>
         </Toolbar>
