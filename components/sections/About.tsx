@@ -70,7 +70,7 @@ export default function About() {
     };
 
     return (
-        <Box display='flex' flexDirection={'column'} alignItems='center' minHeight={'100vh'} justifyContent='center'  sx={{background: '#393e4616', p:0}} id="about" >
+        <Box display='flex' flexDirection={'column'} alignItems='center' minHeight={'100vh'} justifyContent='center'  sx={{backgroundColor: theme.palette.background.default, p:0}} id="about" >
             <Grid container rowSpacing={0} columnSpacing={2}  maxWidth={'lg'} padding={2}>
                 <Grid item xs={12}>
                     <Typography variant='body1' fontWeight={'bold'} gutterBottom>

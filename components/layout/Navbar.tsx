@@ -37,22 +37,6 @@ function Navbar() {
     <AppBar position="fixed" sx={{ background: 'rgba(255, 255, 255, 0.8)', backdropFilter: 'blur(10px)' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontWeight: 700,
-              letterSpacing: '.1rem',
-              color: 'primary.main',
-              textDecoration: 'none',
-            }}
-          >
-            ChristianDev
-          </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -140,7 +124,7 @@ function Navbar() {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Stack direction="row" spacing={2}>
+            <Stack direction="row" spacing={0}>
               {['github', 'linkedin'].map((platform) => (
                 <IconButton
                   key={platform}

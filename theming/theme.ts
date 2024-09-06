@@ -1,20 +1,12 @@
-import { Roboto } from 'next/font/google';
 import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 import { red } from '@mui/material/colors';
-
-export const roboto = Roboto({
-  weight: ['300', '400', '500', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-  fallback: ['Helvetica', 'Arial', 'sans-serif'],
-});
 
 // Create a theme instance.
 const theme = createTheme({
    palette: {
      primary: {
-       main: '#00adb5',
-       alt: '#BF2EF0'
+       main: '#bc6c25',
+       alt: '#1c5987',
      },
      secondary: {
        main: '#393e46',
@@ -23,14 +15,13 @@ const theme = createTheme({
        main: red.A400,
      },
      background: {
-        default: '#EEEEEE',
+        default: '#dbc5a9',
+        secondary: '#fefae0',
      },
    },
   typography: {
-    fontFamily: roboto.style.fontFamily,
+    fontFamily: 'Söhne, sans-serif',
   },
 });
-
-
 
 export default responsiveFontSizes(theme);

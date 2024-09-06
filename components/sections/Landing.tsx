@@ -28,20 +28,7 @@ export default function Landing() {
         return () => clearInterval(interval);
     }, [images.length]);
 
-    const [typedText, setTypedText] = useState('');
-
-    useEffect(() => {
-        const text = t('landingSection.greeting');
-        let index = 0;
-        const interval = setInterval(() => {
-            setTypedText(text.substring(0, index));
-            index++;
-            if (index > text.length) clearInterval(interval);
-        }, 100);
-
-        // Add this line to clean up the interval
-        return () => clearInterval(interval);
-    }, [t]); // Add t to the dependency array
+    const description = t('landingSection.description');
 
     return (
         <Container maxWidth="lg" id="landing">
@@ -52,7 +39,8 @@ export default function Landing() {
                     justifyContent: 'center',
                     alignContent: 'center',
                     alignItems: 'left',
-                    minHeight: '100vh',
+                    minHeight: 'calc(100vh)', 
+                    pb: "68px" // Adjusted to match the navbar height
                 }}
             >
                 <Box sx={{ display: 'flex', flexDirection: isSM ? 'column' : 'row', gap: isSM ? 2 : 30 }}>
@@ -83,12 +71,27 @@ export default function Landing() {
                                 {t('landingSection.name')}
                             </Typography>
                         </motion.div>
-                        <Typography variant='body1' fontWeight={'bold'} color="secondary" gutterBottom>
-                            {t('landingSection.description')}
-                        </Typography>
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 0.5 }}
+                        >
+                            <Typography variant='body1' fontWeight={'bold'} gutterBottom color={theme.palette.primary.alt}>
+                                {description.split('').map((char, index) => (
+                                    <motion.span
+                                        key={index}
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        transition={{ duration: 0.1, delay: index * 0.05 }}
+                                    >
+                                        {char}
+                                    </motion.span>
+                                ))}
+                            </Typography>
+                        </motion.div>
                         <Box sx={{ pt: 1 }}>
-                            <Button variant='contained' size="large" sx={{ borderRadius: '0.875rem' }}>
-                                <Link href={t('landingSection.link.ref')} color='secondary' underline={'none'}>
+                            <Button variant='contained' size="large" sx={{ borderRadius: '0.875rem', backgroundColor: theme.palette.primary.main }}>
+                                <Link href={t('landingSection.link.ref')} color='secondary' fontWeight={'bold'} underline={'none'}>
                                     {t('landingSection.link.title')}
                                 </Link>
                             </Button>
