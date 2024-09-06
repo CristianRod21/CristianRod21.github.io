@@ -5,6 +5,7 @@ import theme from '../../theming/theme'
 import {
     useTranslation,
 } from "next-export-i18n";
+import InterestCarousel from '../sections/Personal';
 
 function AvatarChips({ label, src, alt }: { label: string, src: string, alt: string }) {
     return (
@@ -73,6 +74,11 @@ export default function About() {
         <Box display='flex' flexDirection={'column'} alignItems='center' minHeight={'100vh'} justifyContent='center'  sx={{backgroundColor: theme.palette.background.default, p:0}} id="about" >
             <Grid container rowSpacing={0} columnSpacing={2}  maxWidth={'lg'} padding={2}>
                 <Grid item xs={12}>
+
+                    <Box sx={{padding: '10rem'}}>
+                        <InterestCarousel/>
+                    </Box>
+
                     <Typography variant='body1' fontWeight={'bold'} gutterBottom>
                         {t('aboutSection.subtitle')}
                     </Typography>
@@ -82,6 +88,7 @@ export default function About() {
                     <Typography variant='body1' fontWeight={'regular'} gutterBottom>
                         {t('aboutSection.description')}
                     </Typography>
+
                     {/* <Trans
                         i18nKey="common:aboutSection.description"
                         components={{
