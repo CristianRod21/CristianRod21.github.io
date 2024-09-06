@@ -89,12 +89,48 @@ export default function Landing() {
                                 ))}
                             </Typography>
                         </motion.div>
-                        <Box sx={{ pt: 1 }}>
-                            <Button variant='contained' size="large" sx={{ borderRadius: '0.875rem', backgroundColor: theme.palette.primary.main }}>
-                                <Link href={t('landingSection.link.ref')} color='secondary' fontWeight={'bold'} underline={'none'}>
-                                    {t('landingSection.link.title')}
-                                </Link>
-                            </Button>
+                        <Box sx={{ pt: 2 }}>
+                            <motion.div
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                            >
+                                <Button
+                                    variant='contained'
+                                    size="large"
+                                    sx={{
+                                        borderRadius: '2rem',
+                                        backgroundColor: theme.palette.primary.main,
+                                        padding: '12px 24px',
+                                        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+                                        transition: 'all 0.3s ease',
+                                        '&:hover': {
+                                            backgroundColor: theme.palette.primary.dark,
+                                            boxShadow: '0 6px 8px rgba(0, 0, 0, 0.15)',
+                                        },
+                                    }}
+                                >
+                                    <Link
+                                        href={t('landingSection.link.ref')}
+                                        color='secondary'
+                                        fontWeight={'bold'}
+                                        underline={'none'}
+                                        sx={{
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            gap: 1,
+                                        }}
+                                    >
+                                        <motion.span
+                                            initial={{ x: -5 }}
+                                            animate={{ x: 0 }}
+                                            transition={{ repeat: Infinity, duration: 0.8, repeatType: 'reverse' }}
+                                        >
+                                            👉
+                                        </motion.span>
+                                        {t('landingSection.link.title')}
+                                    </Link>
+                                </Button>
+                            </motion.div>
                         </Box>
                     </Box>
                     <motion.div
