@@ -15,6 +15,7 @@ import {
   useTranslation,
 } from "next-export-i18n";
 import Link from '../../src/Link';
+import Image from 'next/image';
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
@@ -138,7 +139,12 @@ function Navbar() {
                     },
                   }}
                 >
-                  <img src={`/icons/${platform}.png`} alt={`${platform} link`} style={{ width: '1.5rem', height: '1.5rem' }} />
+                  <Image 
+                    src={`/icons/${platform}.png`} 
+                    alt={`${platform} link`} 
+                    width={24} 
+                    height={24} 
+                  />
                 </IconButton>
               ))}
             </Stack>

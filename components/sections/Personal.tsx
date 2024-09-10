@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const interests = [
   {
     icon: <BookOpen size={48} />,
-    title: "Let's reproduce GPT",
+    title: "Let&apos;s reproduce GPT",
     subtitle: "by Andrej Karpathy",
     color: "#FFD700",
     description: "Exploring the inner workings of GPT models through hands-on implementation."
@@ -50,7 +50,7 @@ const InterestCarousel: React.FC = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <Typography variant="h6" sx={{ mb: 2, textAlign: 'center', fontWeight: 'bold' }}>Things I'm learning:</Typography>
+        <Typography variant="h6" sx={{ mb: 2, textAlign: 'center', fontWeight: 'bold' }}>Things I&apos;m learning:</Typography>
       </motion.div>
       <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
         {[-1, 0, 1].map((offset) => {
