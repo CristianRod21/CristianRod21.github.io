@@ -75,7 +75,7 @@ export default function About() {
             <Grid container rowSpacing={0} columnSpacing={2}  maxWidth={'lg'} padding={2}>
                 <Grid item xs={12}>
 
-                    <Box sx={{padding: '10rem'}}>
+                    <Box sx={{padding: '1rem'}}>
                         <InterestCarousel/>
                     </Box>
 
