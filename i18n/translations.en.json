@@ -11,7 +11,7 @@
     "aboutSection": {
         "subtitle": "Get to know me",
         "title": "About Me",
-        "description": "I'm a software engineer from Costa Rica who's passionate about creating innovative solutions. I'm currently leveraging my skills at EY to develop blockchain-powered applications that tackle complex business challenges. I'm also pursuing a Master's degree in Computer Science at the Universidad de Costa Rica with a focus on Machine Learning. I'm always eager to learn, create, and connect with people. In my free time, I enjoy playing sports, watching movies, and exploring new technologies.",
+        "description": "I'm a software engenieer currently based in Costa Rica. My background is Computer Science, but in 2019 I took the Artificial Intelligenc course and had to come up with a project, we had an AWS DeepRacer but I didn't want to rely on AWS credits to train the reinforcement learning model so I c",
         "tabs": {
             "content": {
                 "title": "Experience",
@@ -19,9 +19,9 @@
             },
             "softwareEngineer": {
                 "title": "Software Engineer",
-                "subtitle": "Software Engineer @ EY (2021 - Present)",
-                "description1": "I am working on blockchain-based applications as a Software Engineer at EY",
-                "description2": " I've been involved on the entire development cycle of a blockchain powered application, from the design of the architecture to the development of the application both in the backend and frontend.",
+                "subtitle": "Software Engineer @ EY (2021 - 2023)",
+                "description1": "As a Software Engineer at EY, I engaged in designing and developing software solutions, focusing on blockchain-based applications and optimizing web app performance.",
+                "description2": "I was involved in the entire development cycle of blockchain-powered applications, from architectural design to full-stack development, ensuring robust backend functionality and intuitive frontend experiences.",
                 "technologies": [
                     {
                         "label": "JavaScript",
@@ -73,9 +73,9 @@
             },
             "machineLearning": {
                 "title": "Machine Learning",
-                "subtitle": "Personal Projects  (2020 - Present)",
-                "description1": "Ever since my third year of college, I've been captivated by the limitless potencial of machine learning. I am constantly exploring new ideas, reading research papers, watching tutorials and experimenting with different algorithms to expand my knowledge and improve my skills.",
-                "description2": "My passion for machine learning has driven me to create several exiting projects in the areas of computer vision, and natural language processing. I am eager to take on new challenges and apply my knowledge to solve real world problems.",
+                "subtitle": "Coca-Cola",
+                "description1": "I have been immersed in machine learning for approximately five years, with a keen focus on the engineering aspects as well. My recent projects at Coca-Cola include leading initiatives to enhance data matching accuracy through efficient retrieval techniques, utilizing both dense and sparse vectors, and implementing VectorDBs.",
+                "description2": "I am also involved in deploying models for consumption, particularly in environments with limited computing resources such as CPUs, ensuring efficient and scalable AI solutions.",
                 "technologies": [
                     {
                         "label": "Python",
@@ -113,6 +113,13 @@
                         "alt": "Matplotlib logo"
                     }
                 ]
+            },
+            "personal": {
+                "title": "Personal",
+                "subtitle": "A brief history",
+                "description1": "Based in Costa Rica, I began my AI journey in 2019 with an AWS DeepRacer project. Instead of sticking to AWS credits, I pushed myself by training my own CNN model, inspired by NVIDIA’s work on self-driving cars.",
+                "description2": "That project sparked my passion for deep learning. Since then, I’ve taken courses like Stanford’s CS231n and used machine learning in all my projects, especially focusing on technologies like Transformers. My goal is simple: improve a little every day. Most of my work has been local, but I'm looking to contribute more to open-source projects soon.",
+                "technologies": []
             }
         }
     },

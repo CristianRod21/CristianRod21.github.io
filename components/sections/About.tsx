@@ -41,16 +41,20 @@ function TabContent({ localePrefix }: { localePrefix: string }) {
                 <Typography variant='body1' fontWeight={'normal'}  color='secondary'gutterBottom>
                 {t(`aboutSection.tabs.${localePrefix}.description2`)}
                 </Typography>
-                <Typography variant='body1' color='primary' fontWeight={'bold'} gutterBottom>
-                    {t('aboutSection.tabs.content.technologyStack')}
-                </Typography>
-                <Box>
-                    {technologies.map(item => {
-                        return (
-                            <AvatarChips key={`tab-{${item.label}}`} label={item.label} src={item.src} alt={item.alt} />
-                        )
-                    })}
-                </Box>
+                {technologies.length > 0 && (
+                <>
+                    <Typography variant='body1' color='primary' fontWeight={'bold'} gutterBottom>
+                        {t('aboutSection.tabs.content.technologyStack')}
+                    </Typography>
+                    <Box>
+                        {technologies.map(item => {
+                            return (
+                                <AvatarChips key={`tab-${item.label}`} label={item.label} src={item.src} alt={item.alt} />
+                            )
+                        })}
+                    </Box>
+                </>
+                )}
             </Paper>
         </Paper>
     )
@@ -71,53 +75,29 @@ export default function About() {
     };
 
     return (
-        <Box display='flex' flexDirection={'column'} alignItems='center' minHeight={'100vh'} justifyContent='center'  sx={{backgroundColor: theme.palette.background.default, p:0}} id="about" >
-            <Grid container rowSpacing={0} columnSpacing={2}  maxWidth={'lg'} padding={2}>
-                <Grid item xs={12}>
-
-                    <Box sx={{padding: '1rem'}}>
-                        <InterestCarousel/>
-                    </Box>
-
-                    <Typography variant='body1' fontWeight={'bold'} gutterBottom>
-                        {t('aboutSection.subtitle')}
-                    </Typography>
-                    <Typography variant='h4' color='primary' fontWeight={'bold'} gutterBottom>
-                        {t('aboutSection.title')}
-                    </Typography>
-                    <Typography variant='body1' fontWeight={'regular'} gutterBottom>
-                        {t('aboutSection.description')}
-                    </Typography>
-
-                    {/* <Trans
-                        i18nKey="common:aboutSection.description"
-                        components={{
-                            bold: <Typography variant='body1' fontWeight={'bold'} display="inline" color='primary' />,
-                            boldY: <Typography variant='body1' fontWeight={'bold'} display="inline" color='secondary' />,
-                        }}
-                    /> */}
-
+        <Box display='flex' flexDirection={'column'} alignItems='center' minHeight={'100vh'} justifyContent='center' sx={{backgroundColor: theme.palette.background.default, p: 0}} id="about">
+            <Container> {/* Changed from Grid to Container with maxWidth="xl" */}
+                <InterestCarousel />
+                <Grid container rowSpacing={4} columnSpacing={4} sx={{ py: 4 }}> {/* Increased spacing and added vertical padding */}
+                    <Grid item xs={12}>
+                        <Typography variant='h3' color='primary' fontWeight={'bold'} gutterBottom> {/* Changed from h4 to h3 */}
+                            {t('aboutSection.title')}
+                        </Typography>
+                    </Grid>
+                    <Grid item sm={12} md={4}> {/* Changed from md={5} to md={4} */}
+                        <Tabs value={value} onChange={handleChange} aria-label="stacks" orientation={isMdUp ? 'vertical' : 'horizontal'} sx={{ height: '100%' }}> {/* Added height: '100%' */}
+                            <Tab label={t('aboutSection.tabs.machineLearning.title')} />
+                            <Tab label={t('aboutSection.tabs.softwareEngineer.title')}/>
+                            <Tab label={t('aboutSection.tabs.personal.title')} />
+                        </Tabs>
+                    </Grid>
+                    <Grid item xs={12} sm={12} md={8} sx={{ minHeight: '60vh' }}> {/* Changed from md={6} to md={8} */}
+                        {value === 0 && <TabContent localePrefix='machineLearning' />}
+                        {value === 1 && <TabContent localePrefix='softwareEngineer' />}
+                        {value === 2 && <TabContent localePrefix='personal' />}
+                    </Grid>
                 </Grid>
-                <Grid item sm={12} md={5}>
-                    <Tabs value={value} onChange={handleChange} aria-label="stacks" orientation={isMdUp ? 'vertical' : 'horizontal'}>
-                        <Tab label={t('aboutSection.tabs.softwareEngineer.title')}/>
-                        <Tab label={t('aboutSection.tabs.machineLearning.title')} />
-                    </Tabs>
-                </Grid>
-                <Grid item xs={0} sm={0} md={1}>
-                </Grid>
-                <Grid item xs={12} sm={12} md={6} sx={{ minHeight: '60vh' }}>
-                    {
-                        value === 0 && (
-                            <TabContent localePrefix='softwareEngineer' />)
-                    }
-                    {
-                        value === 1 && (
-                            <TabContent localePrefix='machineLearning' />
-                            )
-                    }
-                </Grid>
-            </Grid>
+            </Container>
         </Box>
     )
 }
