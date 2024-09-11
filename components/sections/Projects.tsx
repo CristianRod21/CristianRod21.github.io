@@ -9,7 +9,7 @@ export default function Projects() {
   const projects = t('projectsSection.projects', {}, { returnObjects: true }) as Array<any>;
 
   return (
-    <Box display='flex' flexDirection={'column'} alignItems='center' minHeight={'100vh'} justifyContent='center' id="projects" sx={{ backgroundColor: theme.palette.background.default }}>
+    <Box display='flex' flexDirection={'column'} alignItems='center' minHeight={'100vh'} justifyContent='center' id="projects" sx={{ backgroundColor: theme.palette.background.light }}>
       <Container maxWidth="lg">
         <Grid container spacing={4}>
           <Grid item xs={12}>
@@ -41,7 +41,7 @@ export default function Projects() {
                   display: 'flex', 
                   flexDirection: 'column', 
                   justifyContent: 'space-between',
-                  backgroundColor: theme.palette.background.light
+                  backgroundColor: theme.palette.background.default 
                 }}>
                   {project.image && (
                     <Box sx={{ mb: 2, position: 'relative', height: 200 }}>
