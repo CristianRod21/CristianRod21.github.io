@@ -7,6 +7,7 @@ import Image from 'next/image';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import BrowserInference from '../BrowserInference';
 
 // TODO: refactor this to use a collection of images and prompts
 const imagePrompts = [
@@ -37,6 +38,8 @@ export default function Landing() {
 
     const description = t('landingSection.description');
 
+    const [showSentimentAnalysis, setShowSentimentAnalysis] = useState(false);
+
     return (
         <Container maxWidth="lg" id="landing">
             <Box
@@ -47,7 +50,7 @@ export default function Landing() {
                     alignContent: 'center',
                     alignItems: 'left',
                     minHeight: 'calc(100vh)', 
-                    pb: "68px" // Adjusted to match the navbar height
+                    pb: "68px"
                 }}
             >
                 <Box sx={{ display: 'flex', flexDirection: isSM ? 'column' : 'row', gap: isSM ? 2 : 30 }}>
@@ -96,7 +99,7 @@ export default function Landing() {
                                 ))}
                             </Typography>
                         </motion.div>
-                        <Box sx={{ pt: 2 }}>
+                        <Box sx={{ pt: 2, mb: 4, display: 'flex', alignItems: 'center' }}>
                             <motion.div
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
@@ -105,11 +108,11 @@ export default function Landing() {
                                     variant='contained'
                                     size="large"
                                     sx={{
-                                        borderRadius: '2rem',
-                                        backgroundColor: theme.palette.primary.main,
-                                        padding: '12px 24px',
-                                        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+                                        borderRadius: '1.5rem',
+                                        marginLeft: 0,
+                                        padding: '6px 12px',
                                         transition: 'all 0.3s ease',
+                                        fontSize: '0.8rem',
                                         '&:hover': {
                                             backgroundColor: theme.palette.primary.dark,
                                             boxShadow: '0 6px 8px rgba(0, 0, 0, 0.15)',
@@ -138,7 +141,28 @@ export default function Landing() {
                                     </Link>
                                 </Button>
                             </motion.div>
+                            <motion.div
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                            >
+                                <Button
+                                    variant='outlined'
+                                    size="small"
+                                    onClick={() => setShowSentimentAnalysis(!showSentimentAnalysis)}
+                                    sx={{
+                                        borderRadius: '1.5rem',
+                                        marginLeft: 1,
+                                        padding: '6px 12px',
+                                        transition: 'all 0.3s ease',
+                                        fontSize: '0.8rem',
+                                    }}
+                                >
+                                    {showSentimentAnalysis ? 'Hide' : 'Show'} Sentiment
+                                </Button>
+                            </motion.div>
                         </Box>
+                        {showSentimentAnalysis && <BrowserInference />}
+
                     </Box>
                     <motion.div
                         whileHover={{ rotate: 5 }}
