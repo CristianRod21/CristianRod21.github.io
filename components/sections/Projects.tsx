@@ -62,9 +62,9 @@ export default function Projects() {
                   </Typography>
                   <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <Box>
-                      {project.technologies && project.technologies.map((tech: string, index: number) => (
+                      {project.technologies && project.technologies.map((tech: string) => (
                         <Chip 
-                          key={`${project.id}-${tech}-${index}`} 
+                          key={`${project.id}-${tech}`} 
                           label={tech} 
                           size="small" 
                           sx={{ mr: 0.5, mb: 0.5 }} 
