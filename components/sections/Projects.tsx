@@ -24,8 +24,8 @@ export default function Projects() {
               {t('projectsSection.description')}
             </Typography>
           </Grid>
-          {projects.map((project) => (
-            <Grid item xs={12} md={6} lg={4} key={project.id}>
+          {projects.map((project, index) => (
+            <Grid item xs={12} md={6} lg={4} key={`project-${project.id || index}`}>
               <Paper elevation={3} sx={{ 
                 p: 0, 
                 height: '100%', 
