@@ -25,10 +25,10 @@ function TabContent({ localePrefix }: { localePrefix: string }) {
     const technologies = t(`aboutSection.tabs.${localePrefix}.technologies`, {}, { returnObjects: true }) as Array<any>;
 
     return (
-        <Paper sx={{ borderRadius: '0.875rem', display: 'flex', justifyContent: 'center', alignItems: 'center', p:0.5, background: theme.palette.secondary.main,
+        <Paper sx={{ borderRadius: '0.875rem', display: 'flex', justifyContent: 'center', alignItems: 'center', p:0.5, backgroundColor: theme.palette.background.default,
             boxShadow: '-6px 4px 7px -1px rgba(57,62,70,0.75)',
         }}>
-            <Paper sx={{ borderRadius: '0.875rem', background: 'white',  padding: 2 }}>
+            <Paper sx={{ borderRadius: '0.875rem', backgroundColor: theme.palette.background.light,  padding: 2 }}>
                 <Typography variant='h4' fontWeight={'bold'} color="primary" gutterBottom>
                     {t('aboutSection.tabs.content.title')}
                 </Typography>

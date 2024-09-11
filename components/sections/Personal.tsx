@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const interests = [
   {
     icon: <BookOpen size={48} />,
-    title: "Let&apos;s reproduce GPT",
+    title: "Lets reproduce GPT",
     subtitle: "by Andrej Karpathy",
     color: "#FFD700",
     description: "Exploring the inner workings of GPT models through hands-on implementation."
